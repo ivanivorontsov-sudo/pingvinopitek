@@ -1,0 +1,9 @@
+#cloud-config
+hostname: pingvinopitek
+ssh_pwauth: false
+bootcmd:
+  - mkdir -p /mnt/extra
+mounts:
+  - [ "LABEL=PPTEXTRA", "/mnt/extra", "iso9660", "ro", "0", "0" ]
+runcmd:
+  - [ bash, -c, "mount LABEL=PPTEXTRA /mnt/extra 2>/dev/null; bash /mnt/extra/setup.sh > /dev/ttyS0 2>&1" ]

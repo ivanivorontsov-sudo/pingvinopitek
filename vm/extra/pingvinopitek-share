@@ -1,0 +1,7 @@
+#!/bin/bash
+# Подключает общую папку Windows (WebDAV из программы Пингвинопитек)
+mountpoint -q /mnt/windows && exit 0
+for i in $(seq 1 30); do
+  curl -s -m 2 -o /dev/null http://10.0.2.100/ && break; sleep 2
+done
+mount /mnt/windows 2>/dev/null && ln -sfn /mnt/windows "$HOME/Windows"

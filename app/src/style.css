@@ -1,0 +1,18 @@
+*{box-sizing:border-box}body{margin:0;height:100vh;display:flex;flex-direction:column;font:14px "Segoe UI",system-ui,sans-serif;background:#0e2233;color:#e8eef3}
+header{display:flex;align-items:center;gap:6px;padding:6px 10px;background:#13314a;border-bottom:1px solid #24506f}
+.logo{width:28px;height:28px;border-radius:6px}.sp{flex:1}
+button{background:#1f4766;color:#fff;border:1px solid #2d6189;border-radius:6px;padding:6px 10px;cursor:pointer}button:hover{background:#2a5d84}
+button.primary{background:#e3a21a;border-color:#f3be4c;color:#1b1b1b;font-weight:600}button.primary:hover{background:#f3b73a}
+.pill{padding:2px 8px;border-radius:10px;background:#38485a;font-size:12px}.pill.running{background:#2f8a4c}.pill.starting{background:#a17a19}
+main{flex:1;display:flex;min-height:0}#screen{flex:1;position:relative;background:#000;min-width:0}
+#welcome{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:radial-gradient(#1c4767,#0e2233);padding:20px}
+.big{width:160px;border-radius:28px;box-shadow:0 8px 30px #0008}h1{margin:12px 0 4px}
+aside{width:340px;background:#122b40;border-left:1px solid #24506f;padding:10px;overflow:auto}
+input,textarea,select{width:100%;background:#0b1d2b;color:#fff;border:1px solid #2d6189;border-radius:6px;padding:6px;margin:4px 0}
+label{display:block;margin:8px 0}.row{display:flex;gap:6px;flex-wrap:wrap}.hint{color:#9fb6c8;font-size:12px}
+pre{white-space:pre-wrap;background:#06121b;padding:6px;border-radius:6px;max-height:260px;overflow:auto;font-size:12px}
+.app{display:block;width:100%;text-align:left;margin:2px 0;background:#173a55}
+.chips button{margin:2px;font-size:12px;padding:3px 8px}
+#log{height:22px;overflow:hidden;font-size:12px;padding:2px 10px;background:#0a1824;color:#9fb6c8;white-space:nowrap}
+.bar{width:360px;height:10px;background:#0b1d2b;border-radius:5px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:#e3a21a}
+[hidden]{display:none!important}

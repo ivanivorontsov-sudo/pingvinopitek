@@ -1,0 +1,25 @@
+{
+  "name": "pingvinopitek",
+  "productName": "Пингвинопитек",
+  "version": "1.0.0",
+  "description": "Пингвинопитек — Linux для Windows со встроенным ИИ (ИванОператор)",
+  "author": "Воронцов Иван Игоревич",
+  "license": "UNLICENSED",
+  "main": "src/main.js",
+  "scripts": { "start": "electron .", "dist": "electron-builder --win nsis --x64" },
+  "dependencies": { "@novnc/novnc": "1.4.0", "webdav-server": "^2.6.2" },
+  "devDependencies": { "electron": "^33.2.0", "electron-builder": "^25.1.8" },
+  "build": {
+    "appId": "ru.ivanivorontsov.pingvinopitek",
+    "productName": "Пингвинопитек",
+    "executableName": "Pingvinopitek",
+    "artifactName": "Pingvinopitek-Setup-${version}.exe",
+    "directories": { "output": "dist" },
+    "files": ["src/**", "build/icon.png", "node_modules/**", "package.json"],
+    "extraResources": [{ "from": "qemu", "to": "qemu" }],
+    "win": { "target": "nsis", "icon": "build/icon.ico" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "perMachine": false,
+      "createDesktopShortcut": true, "shortcutName": "Пингвинопитек", "language": "1049",
+      "installerIcon": "build/icon.ico", "uninstallerIcon": "build/icon.ico" }
+  }
+}

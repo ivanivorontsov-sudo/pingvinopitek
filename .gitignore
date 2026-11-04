@@ -1,0 +1,12 @@
+node_modules/
+app/dist/
+app/qemu/
+*.qcow2
+*.part*
+*.iso
+*.deb
+vm/*.log
+vm/extra/*.deb
+*.key
+*.pem
+.env

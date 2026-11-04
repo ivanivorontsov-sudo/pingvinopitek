@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src ws://127.0.0.1:*">
+<title>Пингвинопитек</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header>
+  <img src="../build/icon.png" class="logo"><b>Пингвинопитек</b>
+  <span id="state" class="pill">выключен</span>
+  <button id="bStart" class="primary">▶ Запустить Linux</button>
+  <button id="bStop">⏻ Выключить</button>
+  <span class="sp"></span>
+  <button data-tab="apps">☰ Программы</button>
+  <button data-tab="ai">🤖 ИИ</button>
+  <button data-tab="pkg">📦 Установка</button>
+  <button id="bShare">📁 Общая папка</button>
+  <button id="bFull" title="Во весь экран">⛶</button>
+  <button data-tab="settings">⚙</button>
+</header>
+<main>
+  <section id="screen"><div id="welcome">
+    <img src="../build/icon.png" class="big">
+    <h1>Пингвинопитек</h1><p>Linux (Debian 13, XFCE) внутри Windows — с ИИ-помощником ИванОператор.</p>
+    <div id="noImage" hidden>
+      <p><b>Сначала нужен образ Linux</b> (≈2 ГБ, один раз).</p>
+      <button id="bDownload" class="primary">⬇ Скачать образ с GitHub</button>
+      <button id="bImport">📂 Указать скачанный образ…</button>
+      <p class="hint">Репозиторий приватный: для загрузки из программы впишите токен GitHub в ⚙ Настройках, либо скачайте части <code>pingvinopitek-debian13.qcow2.partNN</code> из релиза в браузере и укажите первую часть.</p>
+    </div>
+    <div id="progress" hidden><div class="bar"><i></i></div><span></span></div>
+  </div></section>
+  <aside id="panel" hidden>
+    <div class="tab" id="tab-apps"><h3>Программы Linux</h3><input id="appFilter" placeholder="Поиск…"><div id="appList"><p class="hint">Запустите Linux.</p></div></div>
+    <div class="tab" id="tab-ai"><h3>ИИ-оператор</h3>
+      <p class="hint">ИванОператор работает внутри Linux и сам управляет его рабочим столом: нажимает, печатает, открывает программы.</p>
+      <button id="bAiOpen" class="primary">Открыть ИванОператор</button>
+      <textarea id="aiTask" rows="6" placeholder="Например: установи GIMP и открой в нём картинку из общей папки"></textarea>
+      <button id="bAiSend">Передать задачу ИванОператору</button>
+      <p class="hint">Задача попадёт в буфер обмена Linux и ИванОператор откроется — вставьте её (Ctrl+V) в поле задачи.</p>
+      <h3>Команда Linux</h3><input id="cmd" placeholder="uname -a"><pre id="cmdOut"></pre></div>
+    <div class="tab" id="tab-pkg"><h3>Установка программ</h3>
+      <input id="pkgQ" placeholder="Название (например: gimp, vlc, libreoffice)"><div class="row"><button id="bPkgSearch">Найти</button><button id="bPkgInstall" class="primary">Установить</button><button id="bSynaptic">Synaptic</button></div>
+      <div class="chips" id="chips"></div><pre id="pkgOut"></pre></div>
+    <div class="tab" id="tab-settings"><h3>Настройки</h3>
+      <label>Память, МБ <input id="sRam" type="number" min="1024" step="512"></label>
+      <label>Ядра процессора <input id="sCpu" type="number" min="1" max="32"></label>
+      <label>Ускорение <select id="sAccel"><option value="auto">Авто (WHPX → TCG)</option><option value="whpx">WHPX (Hyper-V)</option><option value="tcg">Без ускорения (TCG)</option></select></label>
+      <label>Общая папка <span class="row"><input id="sShare"><button id="bPickShare">…</button></span></label>
+      <label>Токен GitHub для загрузки образа <input id="sToken" type="password" placeholder="ghp_… (хранится зашифрованным)"></label>
+      <label>Релиз образа <input id="sTag"></label>
+      <div class="row"><button id="bSave" class="primary">Сохранить</button><button id="bImport2">Импорт образа…</button><button id="bReset">Сбросить Linux</button><button id="bLog">Журнал</button></div>
+      <p class="hint" id="dataDir"></p>
+      <p class="hint">Для ускорения в Windows включите компонент «Платформа низкоуровневой оболочки Windows» (Windows Hypervisor Platform) и перезагрузите ПК. Без него Linux работает, но медленнее.</p>
+    </div>
+  </aside>
+</main>
+<footer id="log"></footer>
+<script type="module" src="renderer.js"></script>
+</body></html>

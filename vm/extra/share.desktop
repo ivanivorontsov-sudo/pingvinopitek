@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Общая папка Windows
+Exec=sh -c 'pingvinopitek-share; exo-open --launch FileManager /mnt/windows'
+Icon=folder-remote

@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=ИванОператор
+Exec=sh -c 'sleep 4; /opt/ИванОператор/ivan-operator --no-sandbox'
+Icon=ivan-operator
