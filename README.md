@@ -12,9 +12,13 @@ Linux (Debian 13 + XFCE) внутри Windows x64 со встроенным ИИ
 - Образ: `base.qcow2` (только чтение) + оверлей `disk.qcow2` → «Сбросить систему» возвращает чистое состояние.
 - В гостевой системе: пользователь `pingvin` / пароль `pingvin` (sudo без пароля), автовход, русская локаль, раскладка us,ru (Alt+Shift), часовой пояс Asia/Vladivostok.
 
+## Скачать
+- Установщик Windows: [Пингвинопитек 1.0.0](https://github.com/ivanivorontsov-sudo/pingvinopitek/releases/tag/v1.0.0) (`Pingvinopitek-Setup-1.0.0.exe`)
+- Образ Linux: [image-v1](https://github.com/ivanivorontsov-sudo/pingvinopitek/releases/tag/image-v1) (`pingvinopitek-debian13.qcow2.part00`)
+
 ## Установка
 1. Скачайте `Pingvinopitek-Setup-*.exe` из релиза и установите.
-2. Образ Linux (релиз `image-v1`): скачайте части `pingvinopitek-debian13.qcow2.partNN` и укажите первую часть в программе — или вставьте GitHub-токен в ⚙ Настройках (репозиторий приватный), и программа скачает образ сама.
+2. Образ Linux (релиз `image-v1`): скачайте `pingvinopitek-debian13.qcow2.part00` и укажите его в программе. Репозиторий публичный, токен GitHub не обязателен; его можно вписать в ⚙ Настройках, только если анонимная загрузка с GitHub ограничена.
 3. Для скорости включите компонент Windows «Платформа низкоуровневой оболочки Windows» (Windows Hypervisor Platform).
 
 ## Сборка
